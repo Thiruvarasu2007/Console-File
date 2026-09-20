@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java I/O Learning Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Java I/O</div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#console">Console I/O</a>
+                <a href="#file">File I/O</a>
+                <a href="#examples">Examples</a>
+                <a href="#about">Conclusion</a>
+                <button onclick="toggleDarkMode()">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">JAVA PROGRAMMING</p>
+
+            <h1>Console & File<br>
+                <span>Input / Output</span>
+            </h1>
+
+            <p>
+                Learn how Java reads input, displays output,
+                reads files and writes data into files.
+            </p>
+
+            <button class="main-btn" onclick="startLearning()">
+                🚀 Start Learning
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Overview -->
+    <section class="section">
+
+        <h2>Java I/O Overview</h2>
+
+        <p class="section-intro">
+            Java provides different classes to perform input and
+            output operations efficiently.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🖥️</div>
+                <h3>Console Input</h3>
+                <p>
+                    Use Scanner to receive data from the keyboard.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📄</div>
+                <h3>File Reading</h3>
+                <p>
+                    FileReader and BufferedReader are used to read files.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">✍️</div>
+                <h3>File Writing</h3>
+                <p>
+                    FileWriter and BufferedWriter are used to write files.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Buffered I/O</h3>
+                <p>
+                    Buffered classes provide efficient data processing.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Console I/O -->
+    <section id="console" class="section alternate">
+
+        <h2>🖥️ Console Input / Output</h2>
+
+        <p>
+            Console I/O allows a Java program to receive information
+            from the keyboard and display results on the screen.
+        </p>
+
+        <div class="io-flow">
+            <div>⌨️ User Input</div>
+            <span>→</span>
+            <div>☕ Java Program</div>
+            <span>→</span>
+            <div>🖥️ Output</div>
+        </div>
+
+        <h3>Scanner Example</h3>
+
+        <div class="code-box">
+<pre>
+import java.util.Scanner;
+
+class ConsoleInput {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+
+        System.out.println("Hello " + name);
+
+        sc.close();
+    }
+}
+</pre>
+        </div>
+
+    </section>
+
+
+    <!-- File I/O -->
+    <section id="file" class="section">
+
+        <h2>📁 File Input / Output</h2>
+
+        <p>
+            File I/O is used to store data in files and retrieve
+            information from existing files.
+        </p>
+
+        <div class="file-flow">
+
+            <div class="flow-box">
+                <h3>📖 Reading</h3>
+                <p>FileReader</p>
+                <p>BufferedReader</p>
+            </div>
+
+            <div class="arrow">↔</div>
+
+            <div class="flow-box">
+                <h3>✍️ Writing</h3>
+                <p>FileWriter</p>
+                <p>BufferedWriter</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Examples -->
+    <section id="examples" class="section alternate">
+
+        <h2>💻 Java Code Examples</h2>
+
+
+        <!-- File Reading -->
+        <div class="example">
+
+            <h3>1. File Reading – FileReader</h3>
+
+            <div class="code-box">
+<pre>
+import java.io.FileReader;
+
+class ReadFile {
+
+    public static void main(String[] args)
+            throws Exception {
+
+        FileReader fr =
+            new FileReader("data.txt");
+
+        int ch;
+
+        while ((ch = fr.read()) != -1) {
+            System.out.print((char) ch);
+        }
+
+        fr.close();
+    }
+}
+</pre>
+            </div>
+
+        </div>
+
+
+        <!-- File Writing -->
+        <div class="example">
+
+            <h3>2. File Writing – FileWriter</h3>
+
+            <div class="code-box">
+<pre>
+import java.io.FileWriter;
+
+class WriteFile {
+
+    public static void main(String[] args)
+            throws Exception {
+
+        FileWriter fw =
+            new FileWriter("data.txt");
+
+        fw.write("Hello Java");
+
+        fw.close();
+
+        System.out.println(
+            "Data written successfully."
+        );
+    }
+}
+</pre>
+            </div>
+
+        </div>
+
+
+        <!-- BufferedReader -->
+        <div class="example">
+
+            <h3>3. BufferedReader</h3>
+
+            <div class="code-box">
+<pre>
+import java.io.*;
+
+class BufferedExample {
+
+    public static void main(String[] args)
+            throws Exception {
+
+        BufferedReader br =
+            new BufferedReader(
+                new FileReader("data.txt")
+            );
+
+        String line;
+
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+
+        br.close();
+    }
+}
+</pre>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Interactive Demo -->
+    <section class="demo-section">
+
+        <h2>🚀 Interactive Java I/O Demo</h2>
+
+        <p>Enter your name and see the console I/O process.</p>
+
+        <input
+            type="text"
+            id="nameInput"
+            placeholder="Enter your name"
+        >
+
+        <button class="main-btn" onclick="showOutput()">
+            Show Output
+        </button>
+
+        <div id="output" class="output-box">
+            Your output will appear here.
+        </div>
+
+    </section>
+
+
+    <!-- Advantages -->
+    <section class="section">
+
+        <h2>⭐ Advantages of Java I/O</h2>
+
+        <div class="advantages">
+
+            <div>✓ Easy data handling</div>
+
+            <div>✓ File data storage</div>
+
+            <div>✓ Efficient processing</div>
+
+            <div>✓ Supports different input sources</div>
+
+            <div>✓ Simple programming interface</div>
+
+            <div>✓ Useful for real applications</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Conclusion -->
+    <section id="about" class="section conclusion">
+
+        <h2>📌 Conclusion</h2>
+
+        <p>
+            Java provides powerful classes for handling console
+            and file input/output operations. Scanner is useful
+            for console input, while FileReader, BufferedReader,
+            FileWriter and BufferedWriter are useful for file
+            operations.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>Java I/O Learning Hub</h3>
+
+        <p>
+            Console & File Input/Output in Java
+        </p>
+
+        <p>© 2026 Java Learning Website</p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
